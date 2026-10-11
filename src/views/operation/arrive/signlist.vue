@@ -247,7 +247,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, computed } from 'vue'
+import { ref, reactive, computed, watch } from 'vue'
+import { useRoute } from 'vue-router'
 import { ElMessage } from 'element-plus'
 import { Search, Edit, Download, Lock, Setting } from '@element-plus/icons-vue'
 import { useOperationStore } from '@/store/operation'
@@ -261,6 +262,7 @@ import NetworkTreeSelect from '@/views/operation/components/NetworkTreeSelect.vu
 import GbPager from '@/views/operation/components/GbPager.vue'
 import GbTableEngine from '@/views/operation/components/GbTableEngine.vue'
 
+const route = useRoute()
 const opStore = useOperationStore()
 
 const shuttleTabs = [
@@ -270,7 +272,13 @@ const shuttleTabs = [
   { name: '4', label: '外发签收' }
 ]
 
-const activeTab = ref('1')
+const activeTab = ref(String(route.query.tab || '1'))
+watch(
+  () => route.query.tab,
+  (val) => {
+    if (val) activeTab.value = String(val)
+  }
+)
 const currentPage = ref(1)
 const pageSize = ref(100)
 const quickJumpNo = ref('')
