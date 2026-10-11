@@ -61,14 +61,8 @@
               <div
                 v-if="!isCollapse"
                 class="menu-title-wrap"
-                :class="{ 'active-bottom-line': item.path === '/operation' }"
               >
-                <span
-                  class="menu-title-span"
-                  :style="{
-                    margin: item.path === '/operation' ? '0px 0px 0px 22px' : '0px'
-                  }"
-                >
+                <span class="menu-title-span">
                   {{ item.meta?.title }}
                 </span>
               </div>
@@ -323,12 +317,6 @@ function handleToolClick(type: string) {
     line-height: 51px;
     padding-left: 5px;
     font-weight: 800;
-
-    &.active-bottom-line {
-      border-top: 1px solid #f0f2f5;
-      margin-right: 20px;
-      margin-left: -20px;
-    }
   }
 
   .menu-title-span {
