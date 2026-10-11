@@ -1,0 +1,113 @@
+// 系统核心视觉规范色彩变量 (100% 还原科邦智联星云SaaS官方主题)
+$sidebar-bg: #4F77CB;
+$sidebar-hover: #2D71B6;
+$sidebar-active: #2D71B6;
+$sidebar-text: #ffffff;
+$sidebar-text-active: #ffffff;
+
+$primary-color: #4F77CB;
+$text-main: #303133;
+$text-regular: #606266;
+$text-secondary: #909399;
+$border-color: #e4e7ed;
+$bg-color: #f0f2f5;
+
+:root {
+  --el-color-primary: #4F77CB;
+  --el-color-primary-light-3: #7597de;
+  --el-color-primary-light-5: #9db5e8;
+  --el-color-primary-light-7: #c5d3f2;
+  --el-color-primary-light-8: #d9e2f7;
+  --el-color-primary-light-9: #ecf1fb;
+  --el-color-primary-dark-2: #3f5fa2;
+}
+
+// 全局 Reset 与排版
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #app {
+  width: 100%;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $bg-color;
+  color: $text-main;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 滚动条轻量美化 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: #c1c5cc;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f2f5;
+}
+
+/* 100% 复刻线上 GbDialog / elDialogBox 全局弹窗样式 */
+.el-dialog.elDialogBox,
+.elDialogBox {
+  border-radius: 5px !important;
+  overflow: hidden;
+  min-height: 300px;
+  height: 500px;
+  padding: 0 !important;
+  box-shadow: rgb(122, 162, 223) 1px 1px 5px !important;
+  position: relative;
+
+  .el-dialog__header {
+    padding: 4px 5px 2px 12px !important;
+    margin-right: 0 !important;
+    border-radius: 4px 4px 0 0;
+    background-color: rgba(64, 158, 255, 0.9) !important;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .el-dialog__title {
+    color: #fff !important;
+    font-size: 15px;
+  }
+
+  .el-dialog__headerbtn {
+    width: 30px;
+    height: 25px;
+    top: 6px;
+    right: 6px;
+
+    .el-dialog__close {
+      color: #fff !important;
+      font-size: 20px;
+    }
+  }
+
+  .el-dialog__body {
+    padding: 0 !important;
+    position: absolute;
+    left: 0;
+    top: 36px;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    flex-flow: column;
+    color: #606266;
+    font-size: 14px;
+  }
+}
+
